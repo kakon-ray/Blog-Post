@@ -9,11 +9,13 @@ import About from "./page/About/About";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "bootstrap/dist/css/bootstrap.min.css";
+import Header from "./component/Header";
 
 function App() {
   return (
     <div className="App">
       <Router>
+        <Header />
         <ToastContainer position="top=center" />
         <Switch>
           <Route exact path="/" component={Home} />
