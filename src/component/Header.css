@@ -1,0 +1,16 @@
+.nav-link {
+  text-decoration: none;
+  margin: 0 10px;
+  font-weight: 600;
+}
+.active {
+  color: #61dafb !important;
+  font-weight: 800;
+}
+.nav-link.active {
+  color: rgb(21, 197, 197) !important;
+  font-weight: 800;
+}
+.dropdown-toggle.active {
+  color: #61dafb !important;
+}

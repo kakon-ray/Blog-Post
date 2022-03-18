@@ -6,15 +6,21 @@ import AddEdit from "./page/AddEdit/AddEdit";
 import View from "./page/View/View";
 import About from "./page/About/About";
 
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+
 function App() {
   return (
     <div className="App">
       <Router>
+        <ToastContainer position="top=center" />
         <Switch>
           <Route exact path="/" component={Home} />
           <Route exact path="/add" component={AddEdit} />
-          <Route exact path="/view" component={View} />
           <Route exact path="/about" component={About} />
+          <Route exact path="/view/:id" component={View} />
+          <Route exact path="/about/:id" component={About} />
         </Switch>
       </Router>
     </div>
