@@ -16,7 +16,7 @@ function App() {
     <div className="App">
       <Router>
         <Header />
-        <ToastContainer position="top=center" />
+        <ToastContainer position="top-center" />
         <Switch>
           <Route exact path="/" component={Home} />
           <Route exact path="/add" component={AddEdit} />

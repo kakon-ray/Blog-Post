@@ -1,6 +1,73 @@
-import React from "react";
+import { Button } from "react-bootstrap";
+import React, { useState } from "react";
+import { Form } from "react-bootstrap";
 import Header from "../../component/Header";
+import { toast } from "react-toastify";
 
+const inputValue = {
+  name: "",
+  email: "",
+  message: "",
+};
 export default function AddEdit() {
-  return <div>Add Edit</div>;
+  const [user, setUser] = useState(inputValue);
+  const { name, email, message } = user;
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setUser({ ...user, [name]: value });
+  };
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (!name || !email || !message) {
+      toast.error("Please all Input fild Filap");
+    } else {
+      toast.success("Submited Success Full");
+    }
+    console.log(name, email, message);
+  };
+
+  return (
+    <div>
+      <Form
+        onSubmit={handleSubmit}
+        style={{ width: "50%" }}
+        className="mx-auto"
+      >
+        <Form.Group className="mb-3" controlId="formBasicEmail">
+          <Form.Label>Name: </Form.Label>
+          <Form.Control
+            type="name"
+            name="name"
+            value={name}
+            placeholder="Enter Name"
+            onChange={handleInputChange}
+          />
+        </Form.Group>
+        <Form.Group className="mb-3" controlId="formBasicEmail">
+          <Form.Label>Email address</Form.Label>
+          <Form.Control
+            type="email"
+            placeholder="Enter email"
+            name="email"
+            value={email}
+            onChange={handleInputChange}
+          />
+        </Form.Group>
+        <Form.Group className="mb-3" controlId="formBasicEmail">
+          <Form.Label>Email address</Form.Label>
+          <Form.Control
+            type="message"
+            placeholder="Enter Your Message"
+            name="message"
+            value={message}
+            onChange={handleInputChange}
+          />
+        </Form.Group>
+
+        <Button variant="primary" type="submit">
+          Submit
+        </Button>
+      </Form>
+    </div>
+  );
 }
