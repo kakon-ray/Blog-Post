@@ -1,12 +1,24 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Navbar from "react-bootstrap/Navbar";
 import { Container, Nav, NavDropdown } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import "./Header.css";
+import { useLocation } from "react-router-dom/cjs/react-router-dom.min";
 
 export default function Header() {
   const [activeTab, setActiveTab] = useState("Home");
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.pathname === "/") {
+      setActiveTab("Home");
+    } else if (location.pathname === "/add") {
+      setActiveTab("add");
+    } else if (location.pathname === "/about") {
+      setActiveTab("about");
+    }
+  }, []);
   return (
     <div>
       <Navbar bg="light" expand="lg">
