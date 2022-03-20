@@ -38,8 +38,10 @@ export default function AddEdit() {
   // যখন কম্পোনেন্ট লোড হবে তখন setUser এর মধ্যে setUser এর  user লোড না হয়ে setData এর data লোড হবে
 
   useEffect(() => {
+    // only setUser value data[id] than id match
     if (id) {
       setUser({ ...data[id] });
+      // console.log({ ...data[id] });
     } else {
       setUser({ ...inputValue });
     }
@@ -61,17 +63,31 @@ export default function AddEdit() {
     if (!name || !email || !message) {
       toast.error("Please all Input fild Filap");
     } else {
-      database.child("user").push(user, (error) => {
-        if (error) {
-          toast.error("Submit not Successfull");
-        } else {
-          toast.success("Your Information Successfully Saved");
-        }
-      });
-      setTimeout(() => history.push("/"), 2000);
+      // If the ID is not, then the new user must understand
+      if (!id) {
+        database.child("user").push(user, (error) => {
+          if (error) {
+            toast.error("Submit not Successfull");
+          } else {
+            toast.success("Your Information Successfully Saved");
+          }
+        });
+        //this is Edit fild. If there is an ID then it is being pushed to a specific ID
+      } else {
+        database.child(`user/${id}`).set(user, (error) => {
+          if (error) {
+            toast.error("Submit not Successfull");
+          } else {
+            toast.success("Your Information Successfully Saved");
+          }
+        });
+      }
+
+      setTimeout(() => history.push("/"), 4000);
     }
     // console.log(name, email, message);
   };
+  // console.log(user);
 
   return (
     <div>
