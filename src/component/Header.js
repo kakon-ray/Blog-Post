@@ -43,7 +43,7 @@ export default function Header() {
                   className={`${activeTab === "add" ? "active" : ""} nav-link`}
                   onClick={() => setActiveTab("add")}
                 >
-                  Add
+                  Add User
                 </a>
               </Link>
 

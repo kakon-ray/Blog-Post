@@ -1,5 +1,5 @@
 import { Button } from "react-bootstrap";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Form } from "react-bootstrap";
 import Header from "../../component/Header";
 import { toast } from "react-toastify";
@@ -66,8 +66,11 @@ export default function AddEdit() {
           />
         </Form.Group>
         <Form.Group className="mb-3" controlId="formBasicEmail">
-          <Form.Label>Email address</Form.Label>
-          <Form.Control
+          <Form.Label>Type Your Message</Form.Label>
+          <textarea
+            class="form-control"
+            id="exampleFormControlTextarea1"
+            rows="5"
             type="message"
             placeholder="Enter Your Message"
             name="message"
