@@ -1,8 +1,10 @@
 import { Button } from "react-bootstrap";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Form } from "react-bootstrap";
 import Header from "../../component/Header";
 import { toast } from "react-toastify";
+import database from "../../firebase";
+import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 
 const inputValue = {
   name: "",
@@ -12,6 +14,9 @@ const inputValue = {
 export default function AddEdit() {
   const [user, setUser] = useState(inputValue);
   const { name, email, message } = user;
+
+  const history = useHistory();
+
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setUser({ ...user, [name]: value });
@@ -21,9 +26,16 @@ export default function AddEdit() {
     if (!name || !email || !message) {
       toast.error("Please all Input fild Filap");
     } else {
-      toast.success("Submited Success Full");
+      database.child("user").push(user, (error) => {
+        if (error) {
+          toast.error("Submit not Successfull");
+        } else {
+          toast.success("Your Information Successfully Saved");
+        }
+      });
+      setTimeout(() => history.push("/"), 2000);
     }
-    console.log(name, email, message);
+    // console.log(name, email, message);
   };
 
   return (

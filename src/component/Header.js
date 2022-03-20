@@ -18,7 +18,7 @@ export default function Header() {
     } else if (location.pathname === "/about") {
       setActiveTab("about");
     }
-  }, []);
+  }, [location]);
   return (
     <div>
       <Navbar bg="light" expand="lg">

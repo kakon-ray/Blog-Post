@@ -1,5 +1,7 @@
-import firebase from "firebase/app";
+import firebase from "firebase";
 import "firebase/database";
+
+// npm install firebase@8.3.1 --save
 
 const firebaseConfig = {
   apiKey: "AIzaSyDNky_xsbPkY-7EU3BAc4Yn2irMs4Z-2_g",
@@ -10,6 +12,6 @@ const firebaseConfig = {
   appId: "1:538271584478:web:3390ffd2ccb3055a0f724f",
 };
 
-const fireDB = firebase.initializeApp(firebaseConfig);
+var db = firebase.initializeApp(firebaseConfig);
 
-export default fireDB.database().ref();
+export default db.database().ref();
