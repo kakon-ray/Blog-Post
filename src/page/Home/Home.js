@@ -7,8 +7,9 @@ import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
 
 export default function Home() {
-  const [data, setData] = useState();
+  const [data, setData] = useState({});
 
+  //this code work get data firebase database
   useEffect(() => {
     database.child("user").on("value", (snapshot) => {
       if (snapshot.val() !== null) {
@@ -19,6 +20,7 @@ export default function Home() {
     });
   }, []);
 
+  // this is a temprory array using store key
   var dataId = [];
 
   for (let i in data) {

@@ -24,7 +24,7 @@ function App() {
           <Route exact path="/" component={Home} />
           <Route exact path="/add" component={AddEdit} />
           <Route exact path="/view/:id" component={View} />
-          <Route exact path="/edit/:id" component={Edit} />
+          <Route exact path="/edit/:id" component={AddEdit} />
           <Route exact path="/delete/:id" component={Delete} />
           <Route exact path="/about/:id" component={About} />
         </Switch>
