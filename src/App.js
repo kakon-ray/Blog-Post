@@ -9,7 +9,10 @@ import About from "./page/About/About";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "bootstrap/dist/css/bootstrap.min.css";
+
 import Header from "./component/Header";
+import Edit from "./page/Edit/Edit";
+import Delete from "./page/Delete/Delete";
 
 function App() {
   return (
@@ -20,8 +23,9 @@ function App() {
         <Switch>
           <Route exact path="/" component={Home} />
           <Route exact path="/add" component={AddEdit} />
-          <Route exact path="/about" component={About} />
           <Route exact path="/view/:id" component={View} />
+          <Route exact path="/edit/:id" component={Edit} />
+          <Route exact path="/delete/:id" component={Delete} />
           <Route exact path="/about/:id" component={About} />
         </Switch>
       </Router>
