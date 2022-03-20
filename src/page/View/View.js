@@ -36,7 +36,7 @@ export default function View() {
 
   return (
     <div>
-      <Card style={{ width: "30rem" }} className="mx-auto mt-4">
+      <Card style={{ width: "30rem" }} className="mx-auto my-4">
         <Card.Body className="text-center">
           <Card.Title className="">{user.name}</Card.Title>
           <Card.Text>{user.email}</Card.Text>

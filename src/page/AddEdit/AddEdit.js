@@ -130,7 +130,7 @@ export default function AddEdit() {
           />
         </Form.Group>
 
-        <Button variant="primary" type="submit">
+        <Button variant="primary" type="submit" value={id ? "Update" : "save"}>
           Submit
         </Button>
       </Form>
