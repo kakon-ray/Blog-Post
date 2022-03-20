@@ -24,7 +24,7 @@ export default function Header() {
       <Navbar bg="light" expand="lg">
         <Container>
           <Link to="/" style={{ textDecoration: "none" }}>
-            <Navbar.Brand>React-Bootstrap</Navbar.Brand>
+            <Navbar.Brand>Learn With Kakon</Navbar.Brand>
           </Link>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
@@ -43,7 +43,7 @@ export default function Header() {
                   className={`${activeTab === "add" ? "active" : ""} nav-link`}
                   onClick={() => setActiveTab("add")}
                 >
-                  Add User
+                  Add New Blog
                 </a>
               </Link>
 

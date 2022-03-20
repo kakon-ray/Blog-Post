@@ -42,7 +42,7 @@ export default function Home() {
   };
 
   return (
-    <div className="container">
+    <div className="container-fluid">
       <div className="row mt-4">
         {dataId.map((id) => {
           return (
@@ -63,12 +63,12 @@ export default function Home() {
                 <div className="d-flex justify-content-center mb-3">
                   <Link to={`/view/${id}`}>
                     <Button variant="primary" className="mx-2">
-                      View
+                      View Post
                     </Button>
                   </Link>
                   <Link to={`/edit/${id}`}>
                     <Button variant="secondary" className="mx-2">
-                      Edit
+                      Update Post
                     </Button>
                   </Link>
 
@@ -77,7 +77,7 @@ export default function Home() {
                     className="mx-2"
                     onClick={() => onDelete(id)}
                   >
-                    Delete
+                    Delete Post
                   </Button>
                 </div>
               </Card>
