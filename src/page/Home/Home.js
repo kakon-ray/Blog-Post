@@ -5,6 +5,7 @@ import Header from "../../component/Header";
 import database from "../../firebase";
 import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
+import HomeCard from "./HomeCard";
 
 export default function Home() {
   const [data, setData] = useState({});
@@ -48,39 +49,13 @@ export default function Home() {
           return (
             <div className="col-md-4 my-2">
               <React.Fragment key={id}></React.Fragment>
-              <Card style={{ height: "15rem" }}>
-                <Card.Body className="text-center">
-                  <Card.Title className="">{data[id].name}</Card.Title>
-                  <Card.Text>{data[id].email}</Card.Text>
-                  <Card.Text>
-                    {data[id].message.split("").length < 100
-                      ? data[id].message
-                      : data[id].message.split("").slice(0, 100).join("") +
-                        "........."}
-                    {/* {console.log()} */}
-                  </Card.Text>
-                </Card.Body>
-                <div className="d-flex justify-content-center mb-3">
-                  <Link to={`/view/${id}`}>
-                    <Button variant="primary" className="mx-2">
-                      View Post
-                    </Button>
-                  </Link>
-                  <Link to={`/edit/${id}`}>
-                    <Button variant="secondary" className="mx-2">
-                      Update Post
-                    </Button>
-                  </Link>
-
-                  <Button
-                    variant="danger"
-                    className="mx-2"
-                    onClick={() => onDelete(id)}
-                  >
-                    Delete Post
-                  </Button>
-                </div>
-              </Card>
+              <HomeCard
+                name={data[id].name}
+                email={data[id].email}
+                message={data[id].message}
+                id={id}
+                onDelete={() => onDelete(id)}
+              />
             </div>
           );
         })}

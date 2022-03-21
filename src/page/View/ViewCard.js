@@ -7,7 +7,9 @@ export default function ViewCard({ userName, userEmail, userMessage }) {
     <>
       <Card style={{ width: "30rem" }} className="mx-auto my-4">
         <Card.Body className="text-center">
-          <Card.Title className="">{userName}</Card.Title>
+          <Card.Title className="text-info" style={{ fontSize: "30px" }}>
+            {userName}
+          </Card.Title>
           <Card.Text>{userEmail}</Card.Text>
           <Card.Text>{userMessage}</Card.Text>
         </Card.Body>

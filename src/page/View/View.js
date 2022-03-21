@@ -1,9 +1,5 @@
-import { Button } from "bootstrap";
 import React, { useEffect, useState } from "react";
-import { Card } from "react-bootstrap";
-import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom/cjs/react-router-dom.min";
-import Header from "../../component/Header";
 import database from "../../firebase";
 import ViewCard from "./ViewCard";
 
@@ -14,7 +10,6 @@ const inputValue = {
 };
 
 export default function View() {
-  const [data, setData] = useState({});
   const [user, setUser] = useState(inputValue);
 
   const { id } = useParams();
