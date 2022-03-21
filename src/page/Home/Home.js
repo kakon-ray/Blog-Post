@@ -1,9 +1,5 @@
-import { Button } from "react-bootstrap";
 import React, { useEffect, useState } from "react";
-import { Card } from "react-bootstrap";
-import Header from "../../component/Header";
 import database from "../../firebase";
-import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
 import HomeCard from "./HomeCard";
 

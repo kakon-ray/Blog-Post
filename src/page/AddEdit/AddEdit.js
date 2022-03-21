@@ -83,7 +83,7 @@ export default function AddEdit() {
         });
       }
 
-      setTimeout(() => history.push("/"), 4000);
+      setTimeout(() => history.push("/"), 2000);
     }
     // console.log(name, email, message);
   };

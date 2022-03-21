@@ -28,11 +28,7 @@ export default function HomeCard({ name, email, message, id, onDelete }) {
             </Button>
           </Link>
 
-          <Button
-            variant="danger"
-            className="mx-2"
-            onClick={() => onDelete(id)}
-          >
+          <Button variant="danger" className="mx-2" onClick={onDelete}>
             Delete Post
           </Button>
         </div>
