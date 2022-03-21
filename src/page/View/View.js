@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom/cjs/react-router-dom.min";
 import Header from "../../component/Header";
 import database from "../../firebase";
+import ViewCard from "./ViewCard";
 
 const inputValue = {
   name: "",
@@ -36,13 +37,11 @@ export default function View() {
 
   return (
     <div>
-      <Card style={{ width: "30rem" }} className="mx-auto my-4">
-        <Card.Body className="text-center">
-          <Card.Title className="">{user.name}</Card.Title>
-          <Card.Text>{user.email}</Card.Text>
-          <Card.Text>{user.message}</Card.Text>
-        </Card.Body>
-      </Card>
+      <ViewCard
+        userName={user.name}
+        userEmail={user.email}
+        userMessage={user.message}
+      />
     </div>
   );
 }
