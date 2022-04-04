@@ -8,9 +8,7 @@
 
 > ## Functionality : User create a blog and post this blog
 
-> ## This Project used firebase database
-
-> ## Create manully Active Link Link Functionality
+> ## Create manully Active Link Functionality
 
 > ## Used React Router Dom
 
