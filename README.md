@@ -6,7 +6,7 @@
 
 > ## Used Firebase Database build this project
 
-> ## This project user create a blog and post
+> ## Functionality : User create a blog and post this blog
 
 > ## This Project used firebase database
 
